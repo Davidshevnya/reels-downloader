@@ -10,7 +10,7 @@ router = Router()
 async def message_handler(message: Message):
     if message.text=="" or message.text.find('instagram')==-1:
         await message.answer("Please send link to instagram reels")
-        return False
+        return
     try:
         ig = instaloader.Instaloader()
         post = instaloader.Post.from_shortcode(ig.context,message.text.split("/")[4])
